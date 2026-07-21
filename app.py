@@ -135,14 +135,24 @@ fig = px.bar(
 
 fig.update_traces(
     texttemplate="$ %{text:,.0f}",
-    textposition="outside"
+    textposition="outside",
+    textfont=dict(
+        color="black",
+        size=13
+    )
 )
 
 fig.update_layout(
-    xaxis_title="Prima Total Vigente",
+    xaxis_title="Prima Total Vigente ($)",
     yaxis_title="Regional",
     coloraxis_showscale=False,
-    plot_bgcolor="white"
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    font=dict(
+        color="black",
+        size=13
+    ),
+    margin=dict(l=20, r=20, t=40, b=20)
 )
 
 st.plotly_chart(
