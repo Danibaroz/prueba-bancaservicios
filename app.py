@@ -138,29 +138,40 @@ fig.update_traces(
     textposition="outside",
     textfont=dict(
         color="black",
-        size=13
+        size=12
     )
 )
 
 fig.update_layout(
-    xaxis_title="Prima Total Vigente ($)",
-    yaxis_title="Regional",
-    coloraxis_showscale=False,
     plot_bgcolor="white",
     paper_bgcolor="white",
+    coloraxis_showscale=False,
+
+    xaxis_title="Prima Total Vigente ($)",
+    yaxis_title="Regional",
+
     font=dict(
-        color="black",
-        size=13
+        family="Arial",
+        size=13,
+        color="black"
     ),
-    margin=dict(l=20, r=20, t=40, b=20)
+
+    xaxis=dict(
+        tickfont=dict(color="black"),
+        title_font=dict(color="black"),
+        showgrid=True,
+        gridcolor="#E5E5E5",
+        zeroline=False
+    ),
+
+    yaxis=dict(
+        tickfont=dict(color="black"),
+        title_font=dict(color="black")
+    )
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
-
-st.divider()
+st.plotly_chart(fig, use_container_width=True)
+#st.divider()
 
 # ------------------------
 # Top 10
