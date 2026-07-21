@@ -128,9 +128,9 @@ fig = px.bar(
     x="prima_total_vigente",
     y="regional",
     orientation="h",
+    text="prima_total_vigente",
     color="prima_total_vigente",
-    color_continuous_scale="Blues",
-    text="prima_total_vigente"
+    color_continuous_scale="Greens" 
 )
 
 fig.update_traces(
@@ -139,7 +139,8 @@ fig.update_traces(
     textfont=dict(
         color="black",
         size=12
-    )
+    ),
+    cliponaxis=False   
 )
 
 fig.update_layout(
@@ -160,18 +161,25 @@ fig.update_layout(
         tickfont=dict(color="black"),
         title_font=dict(color="black"),
         showgrid=True,
-        gridcolor="#E5E5E5",
-        zeroline=False
+        gridcolor="#E5E5E5"
     ),
 
     yaxis=dict(
         tickfont=dict(color="black"),
         title_font=dict(color="black")
-    )
+    ),
+
+    margin=dict(
+        l=40,
+        r=120,   
+        t=40,
+        b=30
+    ),
+
+    height=420
 )
 
 st.plotly_chart(fig, use_container_width=True)
-st.divider()
 
 # ------------------------
 # Top 10
